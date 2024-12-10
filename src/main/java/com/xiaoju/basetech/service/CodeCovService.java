@@ -66,4 +66,13 @@ public interface CodeCovService {
      */
     CoverResult getLocalCoverResult(LocalHostRequestParam localHostRequestParam);
 
+    /**
+     * 手动获取手工测试覆盖率
+     *
+     * @param TestResult
+     * @return
+     * @throws Exception
+     */
+    CoverResult getTestResult(LocalHostRequestParam localHostRequestParam);
+
 }
