@@ -46,6 +46,19 @@ public class CodeCovController {
     }
 
     /**
+     * tezt
+     *
+     * @param uuid，触发时携带的UUID
+     * @return coverStatus：-1、失败;1、成功；0、进行中
+     */
+    @GetMapping(value = "/getTest")
+    @ResponseBody
+    public HttpResult<CoverResult> getCoverResult(@RequestParam(value = "uuid") String uuid) {
+        return HttpResult.success(codeCovService.getCoverResult(uuid));
+    }
+    
+    
+    /**
      *
      * @param envCoverRequest
      * @return
