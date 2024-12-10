@@ -96,4 +96,16 @@ public class CodeCovController {
         return HttpResult.success(codeCovService.getLocalCoverResult(localHostRequestParam));
 
     }
+        /**
+     * 手动获取env增量代码覆盖率，代码部署和覆盖率服务在同一机器上，可直接读取本机源码和本机class文件
+     *
+     * @return
+     */
+    @RequestMapping(value = "/getTestResult", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ResponseBody
+    public HttpResult<CoverResult> getTestResult(@RequestBody @Valid LocalHostRequestParam localHostRequestParam) {
+
+        return HttpResult.success(codeCovService.getTestResult(localHostRequestParam));
+
+    }
 }
